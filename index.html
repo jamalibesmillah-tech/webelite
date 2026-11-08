@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEBELITE, votre site!</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img class="logo" src="assets/images/A1F998E4-4D2D-4043-9070-E424CB6D0479.PNG">
+      <ul class="links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="compétences.html">Compétences d'action</a></li>
+        <li><a href="valeurs.html">Nos Valeurs</a></li>
+        <li><a href="/equipe.html">Notre Equipe</a></li>
+        <li><a href="contact.html"><span class="contact-bcg">Contact</span></a></li>
+        <li><a href="inscription.html"><img class="img-links"
+              src="assets/images/416D8E50-A6CC-4064-86BA-8D8A15C7C274.PNG"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section-index">
+    <h1>
+      Donnez vie à vos idées.<br>Démarquez-vous!
+    </h1>
+    <h3>Prestations de design, développement et référencement des sites internets et applications</h3>
+    <a href="contact.html"><span>Prendre rendez-vous</span></a>
+  </section>
+
+  <!-- AVIS CLIENT -->
+  <section class="defilement_avis">
+    <div class="carousel">
+
+      <div class="slide active">
+        <div class="profile">
+          <img src="https://i.pravatar.cc/40?img=1" alt="avatar">
+          <strong>Jean Dupont</strong>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p>Un service irréprochable ! Je recommande fortement cette entreprise.</p>
+        <div class="comment">Merci pour votre professionnalisme.</div>
+        <button class="button lire-plus"
+          data-message="Jean Dupont est très satisfait de notre réactivité et recommande vivement nos services.">
+          Lire plus
+        </button>
+      </div>
+
+      <div class="slide">
+        <div class="profile">
+          <img src="https://i.pravatar.cc/40?img=2" alt="avatar">
+          <strong>Claire Fontaine</strong>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p>Rapide, efficace, et toujours à l'écoute.</p>
+        <div class="comment">Une expérience parfaite.</div>
+        <button class="button lire-plus"
+          data-message="Claire a apprécié la rapidité et l'efficacité de notre service. Elle souligne aussi notre capacité d'écoute, ce qui a rendu son expérience encore plus satisfaisante.">
+          Lire plus
+        </button>
+      </div>
+
+      <div class="slide">
+        <div class="profile">
+          <img src="https://i.pravatar.cc/40?img=3" alt="avatar">
+          <strong>Ali Benomar</strong>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p>Je suis très satisfait du service client.</p>
+        <div class="comment">Continuez comme ça !</div>
+        <button class="button lire-plus"
+          data-message="Ali Benomar félicite notre équipe pour la qualité du service client et la disponibilité.">
+          Lire plus
+        </button>
+      </div>
+
+      <div class="slide">
+        <div class="profile">
+          <img src="https://i.pravatar.cc/40?img=4" alt="avatar">
+          <strong>Lina Moreau</strong>
+        </div>
+        <div class="stars">★★★★☆</div>
+        <p>Bonne expérience globale, service rapide et clair.</p>
+        <div class="comment">Je reviendrai sans hésiter.</div>
+        <button class="button lire-plus"
+          data-message="Lina a été satisfaite par la clarté des explications et la rapidité de prise en charge. Elle aurait juste souhaité un peu plus d'accompagnement personnalisé.">
+          Lire plus
+        </button>
+      </div>
+
+      <div class="slide">
+        <div class="profile">
+          <img src="https://i.pravatar.cc/40?img=5" alt="avatar">
+          <strong>Marc Lefèvre</strong>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p>Un accompagnement au top, merci à toute l’équipe !</p>
+        <div class="comment">Je recommande vivement.</div>
+        <button class="button lire-plus"
+          data-message="Marc a été impressionné par le professionnalisme de l’équipe et la qualité du suivi. Il recommande vivement nos services à ses collègues.">
+          Lire plus
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Popup avis -->
+  <div class="popup-avis-overlay" id="popup-avis">
+    <div class="popup-avis-content">
+      <p id="popup-message"></p>
+      <button onclick="closePopup()" id="close-avis">Fermer</button>
+    </div>
+  </div>
+
+
+  <footer>
+    <section class="footer">
+      <div class="annonce">
+        <p><strong>WebElite</strong>, donnez vie à vos idées.</p><br>
+        <p>Tous droits réservés.</p><br>
+        <p>Agence de prestations de services digitaux : design et développement Web,
+          référencement naturel (SEO)</p><br>
+        <p>132 Rue Saint Charles, 75015 PARIS</p>
+        <a href="#" id="openModal" style="cursor:pointer; color:orange; text-decoration:none;">
+          Mentions Légales de l'agence.
+        </a>
+      </div>
+
+      <!-- Modal fullscreen -->
+      <div id="modal" class="modal-hidden" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+    background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index: 9999;">
+
+        <div style="background:#fff; width:100%; height:100%; position:relative; box-sizing:border-box;">
+          <button id="closeModal"
+            style="position:absolute; top:10px; right:10px; z-index:10; font-size:20px; cursor:pointer;">
+            X
+          </button>
+          <embed src="assets/folder/Mentions_legales_Webelite.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+
+      </div>
+
+      <div class="nav-footer">
+        <a href="acceuil.html"><img class="logo-footer"
+            src="assets/images/A1F998E4-4D2D-4043-9070-E424CB6D0479.PNG"></a>
+
+      </div>
+      <div class="links-footer">
+        <a href="equipe.html">Equipe</a>
+        <a href="valeurs.html">Valeurs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </section>
+
+    <nav class="nav-footer">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"></a><img class="linkedin"
+        src="assets/images/logo linkedin.PNG" alt="">
+      <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer"></a><img
+        class="insta" src="assets/images/logo insta.PNG" alt="">
+
+      <p>©2025 WebElite</p>
+    </nav>
+
+    <div id="popup-cgu" class="popup-overlay">
+      <div class="popup-content">
+        <h2>Conditions d'utilisation et politique de confidentialité</h2>
+        <div class="popup-scroll">
+          <h3>Conditions Générales d’Utilisation (CGU)</h3>
+          <p>En accédant à ce site, vous acceptez les présentes Conditions Générales d’Utilisation. Le site WebElite est
+            un projet fictif réalisé à des fins pédagogiques. Aucun service réel ni collecte commerciale n'est associé à
+            ce site.</p>
+
+          <h3>Politique de confidentialité</h3>
+          <p>Ce site ne collecte pas de données personnelles à des fins commerciales. Les éventuelles données saisies
+            dans les formulaires sont utilisées uniquement dans le cadre éducatif du projet. Aucun cookie de suivi n’est
+            utilisé.</p>
+        </div>
+
+        <label class="accept-box">
+          <input type="checkbox" id="accept-checkbox" />
+          J’accepte les CGU et la politique de confidentialité
+        </label>
+
+        <button id="accept-btn" disabled>Valider</button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gestion popup CGU
+    const popupCGU = document.getElementById("popup-cgu");
+    const checkbox = document.getElementById("accept-checkbox");
+    const acceptBtn = document.getElementById("accept-btn");
+
+    // Fonction pour vérifier si l'utilisateur a accepté
+    function checkAccepted() {
+      const accepted = localStorage.getItem("cguAccepted");
+      if (accepted === "true") {
+        popupCGU.classList.add("hidden");
+        document.body.classList.remove("noscroll");
+      } else {
+        popupCGU.classList.remove("hidden");
+        document.body.classList.add("noscroll");
+      }
+    }
+
+    // Vérifier si localStorage est disponible
+    if (typeof(Storage) !== "undefined") {
+      checkAccepted();
+    } else {
+      // Si localStorage n'est pas disponible, cacher la popup
+      popupCGU.classList.add("hidden");
+    }
+
+    // Activer/désactiver le bouton selon checkbox
+    checkbox.addEventListener("change", () => {
+      acceptBtn.disabled = !checkbox.checked;
+    });
+
+    // Quand on valide
+    acceptBtn.addEventListener("click", () => {
+      if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("cguAccepted", "true");
+      }
+      popupCGU.classList.add("hidden");
+      document.body.classList.remove("noscroll");
+    });
+
+    // 🎯 NOUVEAU CARROUSEL AVEC EFFET DE GLISSEMENT
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'prev');
+        
+        if (i === index) {
+          // Slide actuel au centre
+          slide.classList.add('active');
+        } else if (i < index) {
+          // Slides précédents à gauche
+          slide.classList.add('prev');
+        }
+        // Les slides suivants restent à droite (transform: translateX(100%))
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Initialiser le carrousel
+    showSlide(currentSlide);
+    
+    // Démarrer l'auto-play
+    setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    // Popup "Lire plus" pour les avis
+    const buttons = document.querySelectorAll('.lire-plus');
+    const popupAvis = document.getElementById('popup-avis');
+    const popupMessage = document.getElementById('popup-message');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const message = button.getAttribute('data-message');
+        popupMessage.textContent = message;
+        popupAvis.style.display = 'flex';
+      });
+    });
+
+    function closePopup() {
+      popupAvis.style.display = 'none';
+    }
+
+    // Gestion modal mentions légales
+    const openModal = document.getElementById('openModal');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+
+    if (openModal) {
+      openModal.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (modal) {
+          modal.style.display = 'flex';
+        }
+      });
+    }
+
+    if (closeModal) {
+      closeModal.addEventListener('click', () => {
+        if (modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+
+
+</body>
+
+</html>

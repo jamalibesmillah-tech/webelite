@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <!-- Linking CSS file -->
+  <link rel="stylesheet" href="contact.css">
+
+  <!-- Google Fonts: Bangers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <!-- Header with navigation -->
+  <header>
+        <nav>
+            <img class="logo" src="assets/images/A1F998E4-4D2D-4043-9070-E424CB6D0479.PNG">
+            <ul class="links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="compétences.html">Compétences d'action</a></li>
+                <li><a href="valeurs.html">Nos Valeurs</a></li>
+                <li><a href="equipe.html">Notre Equipe</a></li>
+                <li><a href="contact.html"><span class="contact-bcg">Contact</span></a></li>
+                <li><a href="inscription.html"><img class="img-links"
+                            src="assets/images/416D8E50-A6CC-4064-86BA-8D8A15C7C274.PNG"></a></li>
+            </ul>
+        </nav>
+    </header>
+  <!-- Top banner image with overlay text -->
+  <div class="contact-container">
+    <img src="assets/images/image-contact.png" alt="Contact banner image">
+    <div class="overlay">
+    <h1><a href="#form-section" style="color:inherit; text-decoration:none;">Contactez-Nous</a></h1>
+    </div>
+  </div>
+
+  <!-- Section: Talking with experts -->
+  <div class="parle">
+    <p class="first">Parlez avec nos experts</p>
+    <p class="seconde">CONTACTEZ NOS ÉQUIPES</p>
+  </div>
+
+  <!-- Form section: Vos Coordonnées -->
+  <div class="formbackground" id="form-section">
+    <h2 class="vos">Vos Coordonnées</h2>
+    <div class="formulaire">
+ <form>
+      <!-- Nom -->
+      <label class="label-title">Nom<span class="required">*</span></label>
+      <input type="text" class="input-group">  
+      <!-- prenom -->
+      <label class="label-title">Prénom<span class="required">*</span></label>
+      <input type="text" class="input-group">
+      <!-- Société -->
+      <label class="label-title">Société</label>
+      <input type="text" class="input-group">
+      <!-- adress -->
+      <label class="label-title">Adresse<span class="required">*</span></label>
+      <input type="text"  class="input-group">
+      <!-- Code Postal -->
+      <label class="label-title">Code Postal<span class="required">*</span></label>
+      <input type="text" class="input-group">
+      <!-- Ville -->
+      <label class="label-title">Ville<span class="required">*</span></label>
+      <input type="text" class="input-group">
+      <!-- Email -->  
+      <label class="label-title">Email<span class="required">*</span></label>
+      <input type="email" class="input-group">
+      <!-- Téléphone -->
+      <label class="label-title" >Téléphone<span class="required">*</span></label>
+      <input type="tel" class="input-group">
+      
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Form section: Votre projet -->
+   <div class="formbackground">
+  <div class="form-container">
+    <h2>Parlez-nous de votre projet !</h2>
+    <form>
+      <!-- Choix de l'objet -->
+      <label class="objet">Objet<span class="required">*</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="objet" required> Demander un devis</label><br>
+        <label><input type="radio" name="objet"> Déposer une candidature</label><br>
+        <label><input type="radio" name="objet"> Devenir fournisseur</label>
+      </div>
+
+      <!-- Zone de texte pour le message -->
+      <textarea placeholder="Message"></textarea>
+
+      <!-- Politique de données -->
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" required>
+          En soumettant ce formulaire, j’accepte que mes données soient utilisées pour me recontacter.
+          <a href="#">En savoir plus</a>
+        </label>
+      </div>
+
+      <!-- Bouton d'envoi -->
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+  </div>
+  
+
+  <!-- Bannière WebElite -->
+   <div class="formbackground">
+  <div class="webelite-banner">
+    <h2>
+      <span class="orange">Vivre l’aventure avec WebElite: </span>
+    </h2>
+    <h3>
+      vous désirez <span class="underlined">travailler au sein de notre <span class="highlight">AGENCE</span></span>
+    </h3>
+    <p>
+      Le formulaire ci-dessus est valable pour déposer votre demande dans le cadre des trois raisons mentionnées.
+    </p>
+  </div>
+  </div>
+
+  <!-- Carte Google + adresse -->
+   <div class="formbackground">
+  <div class="map-container">
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.6125094455353!2d2.285032815674316!3d48.84650847928724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671dc940f4931%3A0xa71f1a8e09531f8e!2s132%20Rue%20Saint-Charles%2C%2075015%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1720421370262!5m2!1sen!2sfr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <!-- Adresse sous la carte -->
+    <div class="map-footer">
+      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Google Maps Red Icon">
+      <span>132 rue Saint-Charles, 75015 Paris</span>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer with social media links -->
+  <footer>
+        <section class="footer">
+            <div class="annonce">
+                <p><strong>WebElite</strong>, donnez vie à vos idées.</p><br>
+                <p>Tous droits réservés.</p><br>
+                <p>Agence de prestations de services digitaux : design et développement Web,
+                    référencement naturel (SEO)</p><br>
+                <p>132 Rue Saint Charles, 75015 PARIS</p>
+               <a href="#" id="openModal"style="cursor:pointer; color:orange; text-decoration:none;">
+      Mentions Légales de l'agence.
+    </a>
+</div>
+
+<!-- Modal fullscreen -->
+<div id="modal"  class="modal-hidden" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+    background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+
+  <div style="background:#fff; width:100%; height:100%; position:relative; box-sizing:border-box;">
+    <button id="closeModal" style="position:absolute; top:10px; right:10px; z-index:10; font-size:20px; cursor:pointer;">
+      X
+    </button>
+    <embed src="assets/folder/Mentions_legales_Webelite.pdf" type="application/pdf" width="100%" height="100%">
+  </div>
+
+</div>
+
+            <div class="nav-footer">
+               <a href="acceuil.html"><img class="logo-footer" src="assets/images/A1F998E4-4D2D-4043-9070-E424CB6D0479.PNG"></a>
+
+            </div>
+            <div class="links-footer">
+                <a href="equipe.html">Equipe</a>
+                <a href="valeurs.html">Valeurs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </section>
+
+        <nav class="nav-footer">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"></a><img class="linkedin"
+                src="assets/images/logo linkedin.PNG" alt="">
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer"></a><img
+                class="insta" src="assets/images/logo insta.PNG" alt="">
+
+            <p>©2025 WebElite</p>
+        </nav>
+
+  </footer>
+</body>
+
+</html>

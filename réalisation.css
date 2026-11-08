@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, #3543C6, #533092);
+    padding: 0;
+}
+/* partie header  */
+header {
+    background-color: #1b1a2f;
+}
+
+header img {
+    width: 150px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    transition: color 0.3s;
+    display: block;
+}
+header a:hover {
+    color: #0056b3;
+    transform: scale(0.8)   ;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.img-links {
+    width: 30px;
+    height: 30px;
+    padding-bottom: 3px;
+   
+}
+
+.img-links:hover {
+    background-color: #0056b3; 
+}
+.contact-bcg {
+    background: linear-gradient(#3543C6, #1A2060);
+    color: white;
+    padding: 8px 25px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.contact-bcg:hover {
+    color: #0056b3;
+}
+
+/* fin header  */
+
+/* partie footer */
+
+footer {
+    background-color: #1b1a2f;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
+    color: white;
+    margin-top: 2%;
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.annonce {
+    width: 40%;
+    padding-left: 3rem;
+}
+
+.logo-footer {
+    width: 12rem;
+    margin-right: 26rem;
+    display: block;
+}
+
+.logo-footer:hover {
+    transform: scale(0.8)
+}
+
+.links-footer {
+    padding: 1rem 3rem;
+}
+
+.links-footer a {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding-bottom: 40%;
+    display: block;
+}
+
+.links-footer a:hover {
+    color: #3543C6;
+    transform: scale(0.8)
+}
+
+.linkedin {
+    width: 1.2rem;
+    display: block;
+}
+
+.linkedin:hover {
+    transform: scale(0.8)
+}
+
+
+.insta {
+    width: 1.2rem;
+    display: block;
+}
+
+.insta:hover {
+    transform: scale(0.8)
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-footer p::before {
+    content: "";
+    width: 0.5rem;
+    height: 1rem;
+    border-left: 0.2rem solid white;
+    margin-right: 0.3rem;
+}
+/* fin footer  */
+
+.background {
+    height: 90vh;
+    object-fit: cover;
+    animation: fadeInZoom 1.2s ease-out forwards;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.titre_rea {
+    background-color: white;
+    color: #52B5F2; 
+    padding: 1% 4% ;
+    font-family: Montserrat, sans-serif;
+    font-size: 4rem;
+    
+    position: absolute;
+    right: 3%;
+    bottom:10%;
+    margin: 0;
+}
+
+div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.realisations {
+    background: linear-gradient(#533092, #3543c6 );
+    padding: 5rem;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+div ul {
+    list-style: none;
+}
+div li {
+    color: black;
+    font-family:  "Montserrat", sans-serif;
+}
+.div1 {
+    background-color: #A5B7F2;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    object-fit: cover;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.div1 img {
+    transition: transform 0.3s;
+}
+
+.div1 img:hover {
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.9);
+    }
+    20% {
+        transform: scale(1.1);
+    }
+    40% {
+        transform: scale(0.95);
+    }
+    60% {
+        transform: scale(1.10);
+    }
+    80% {
+        transform: scale(0.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+h2 {
+    text-align: center;
+    font-family:  "Montserrat", sans-serif;
+}
+.p1 {
+    font-size: 2rem;
+}
+.liens {
+    color:#533092;
+    text-decoration: none;
+
+    display: inline-block;
+  transition: transform 0.3s ease;
+}
+.liens:hover {
+    color: white;
+    background: linear-gradient(#533092, #3543c6 );
+
+    transform: scale(1.1);
+}

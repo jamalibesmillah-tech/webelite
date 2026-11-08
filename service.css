@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER, FOOTER, BODY */
+html,
+body {
+    margin: 0;
+}
+/* PARTIE BODY */
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#3543C6, #533092);
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: #1b1a2f;
+}
+
+header img {
+    width: 150px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    transition: color 0.3s;
+    display: block;
+}
+
+header a:hover {
+    color: #0056b3;
+    transform: scale(0.8);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    gap: 1.875rem;
+    margin: 0;
+    padding: 0;
+}
+
+.img-links {
+    width: 1.875rem;
+    height: 1.875rem;
+    padding-bottom: 3px;
+
+}
+
+.img-links:hover {
+    background-color: #0056b3;
+}
+
+.contact-bcg {
+    background: linear-gradient(#3543C6, #1A2060);
+
+    color: white;
+    padding: 9% 15%;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.contact-bcg:hover {
+    color: #0056b3;
+}
+
+.service {
+    background-color: white;
+    color: #52B5F2;
+    font-family: "Montserrat", sans-serif;
+    text-align: end;
+    padding: 2rem 15rem;
+    font-size: 4em;
+    position: absolute;
+    right: 0.1%;
+    bottom: 3%;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {background-repeat: no-repeat;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* FIN HEADER */
+
+/* PARTIE PRESENTATION */
+.image {
+    background-image: url(./assets/images/services.png);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: fadeInZoom 1.2s ease-out forwards;
+    height: 90vh;
+}
+/* PARTIE EXPLICATION */
+.explication {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8em;
+    padding-top: 1%;
+    color: aliceblue;
+    text-align: center;
+}
+/* FIN PARTIE EXPLICATION */
+
+/* PARTIE SERVICE */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin-top: 2%;
+}
+
+.presenter img {
+    margin: 2rem;
+    padding: 10%;
+    background-color: rgba(27, 26, 47, 0.5);
+    border-radius: 1rem;
+}
+
+.presenter {
+    padding-bottom: 2%;
+}
+/* FIN PARTIE SERVICE */
+
+.titre {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: aliceblue;
+    text-align: center;
+}
+
+/* PARTIE PARTENAIRE 1 */
+.partenaire {
+    padding-top: 1%;
+    margin-left: 10%;
+    gap: 2%;
+    height: 110%;
+}
+
+.part {
+    display: flex;
+    background-color: #A5B7F2;
+    color: aliceblue;
+    height: 30rem;
+}
+
+.title2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: aliceblue;
+    margin-left:2%;
+}
+/* FIN PARTIE PARTENAIRE 1 */
+
+/* PARTIE PARTENAIRE 2 */
+.part2 {
+    background-color: #A5B7F2;
+    padding-bottom: 1%;
+}
+
+.textpart2 {
+    color: #FFFDFD;
+    line-height: 1.5;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+.imagepart {
+    display: flex;
+    justify-content: space-around;
+    background-color: #FFFDFD;
+    margin-right:  2%;
+    margin-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.parapart {
+    margin-left: 10%;
+    padding-bottom: 0.5%;
+    font-size: 1.5rem;
+}
+
+.listpart {
+    margin-left: 11%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    font-size: 1.5rem;
+}
+/* FIN PARTIE PARTENAIRE 2 */
+
+/* PARTIE BAS DE PAGE */
+.fin {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: aliceblue;
+    margin-top: 1%;
+    font-size: 1.5rem;
+}
+/* FIN DE PARTIE BAS DE PAGE */
+
+/* PARTIE FOOTER */
+footer {
+    background-color: #1b1a2f;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
+    color: white;
+    margin-top: 2%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.annonce {
+    width: 40%;
+    padding-left: 3rem;
+}
+
+.logo-footer {
+    width: 12rem;
+    margin-right: 26rem;
+    display: block;
+}
+
+.logo-footer:hover {
+    transform: scale(0.8)
+}
+
+.links-footer {
+    padding: 1rem 3rem;
+}
+
+.links-footer a {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding-bottom: 40%;
+    display: block;
+}
+
+.links-footer a:hover {
+    color: #3543C6;
+    transform: scale(0.8)
+}
+
+.linkedin {
+    width: 1.2rem;
+    display: block;
+}
+
+.linkedin:hover {
+    transform: scale(0.8)
+}
+
+
+.insta {
+    width: 1.2rem;
+    display: block;
+}
+
+.insta:hover {
+    transform: scale(0.8)
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-footer p::before {
+    content: "";
+    width: 0.5rem;
+    height: 1rem;
+    border-left: 0.2rem solid white;
+    margin-right: 0.3rem;
+}
+
+/* PARTIE MENTIONS,POLITIQUE,CGU */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #ffffff;
+    padding: 2rem;
+    max-width: 600px;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    overflow: hidden;
+}
+
+.popup-content h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.popup-scroll {
+    overflow-y: auto;
+    max-height: 300px;
+    padding-right: 10px;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+}
+
+.accept-box {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+}
+
+#accept-btn {
+    padding: 0.6rem 1.2rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#accept-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* TABLETTES */
+@media (max-width: 1024px) {
+    .service {
+        font-size: 2em;
+        padding: 1rem 2rem;
+        right: 1em;
+        position: static;
+        text-align: center;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        margin-top: 1rem;
+    }
+    .logo-footer {
+        width: 8rem;
+        margin-right: 0;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .annonce, .links-footer {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .image {
+        height: 50vh;
+    }
+}
+
+/* SMARTPHONES */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .service {
+        font-size: 1.2em;
+        padding: 0.5rem;
+        right: 0;
+        position: static;
+        text-align: center;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        margin-top: 0.5rem;
+    }
+    .presenter img {
+        margin: 1rem;
+        padding: 5%;
+        width: 100%;
+        height: auto;
+    }
+    .part, .part2 {
+        flex-direction: column;
+        height: auto;
+        font-size: 1em;
+    }
+    .title2 {
+        font-size: 1.5em;
+        margin-left: 0;
+        text-align: center;
+    }
+    .logo-footer {
+        width: 6rem;
+        margin-right: 0;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .annonce, .links-footer {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    .image {
+        height: 30vh;
+        background-size: cover;
+    }
+    .explication, .titre, .fin {
+        font-size: 1em;
+        padding: 0.5rem;
+    }
+    .parapart, .listpart {
+        margin-left: 0;
+        font-size: 1em;
+    }
+}

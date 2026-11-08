@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaussettes WebElite - Collection Startup</title>
+    <style>
+        /* CSS Global et Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Styles du Carrousel (section.defilement) */
+        .defilement {
+            /* Renommé de .carousel-container */
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            /* Cache les groupes non visibles */
+            margin: 40px auto;
+            padding: 0 50px;
+            /* Espace pour les flèches */
+            box-sizing: border-box;
+        }
+
+        .carousel-inner {
+            display: flex;
+            /* Permet aux groupes d'être sur une seule ligne */
+            transition: transform 0.5s ease-in-out;
+            /* Animation de défilement */
+        }
+
+        .slide-active {
+            /* Renommé de .carousel-group */
+            min-width: 100%;
+            /* Chaque groupe prend 100% de la largeur du conteneur visible */
+            flex: 0 0 auto;
+            /* Empêche les groupes de rétrécir */
+            display: grid;
+            /* Pour afficher les cartes individuelles en grille */
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 colonnes de taille égale par défaut */
+            gap: 40px;
+            /* Espace entre les cartes DANS un groupe */
+            padding: 0 20px;
+            /* Padding interne pour éviter que les cards ne touchent les bords du group */
+            box-sizing: border-box;
+            align-items: start;
+            /* Les éléments du groupe s'alignent en haut */
+        }
+
+        /* Styles des Cartes de Chaussettes Individuelles (div.slide) */
+        .slide {
+            /* Renommé de .sock-design */
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            width: 400px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            /* Utilisation de flexbox pour aligner le contenu verticalement */
+            flex-direction: column;
+            justify-content: space-between;
+            /* Espace entre les éléments pour pousser les features vers le bas */
+            height: 100%;
+            /* Important pour que toutes les cartes aient la même hauteur dans la grille */
+        }
+
+        .slide:hover {
+            /* Mis à jour de .sock-design:hover */
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Effet de balayage lumineux au survol */
+        .slide::before {
+            /* Mis à jour de .sock-design::before */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .slide:hover::before {
+            /* Mis à jour de .sock-design:hover::before */
+            left: 100%;
+        }
+
+        /* Styles des images réelles à l'intérieur de .slide */
+        .slide img {
+            /* Mis à jour de .sock-design img */
+            width: 100%;
+            max-height: 250px;
+            /* Limite la hauteur de l'image pour un look cohérent */
+            object-fit: contain;
+            /* Assure que l'image entière est visible. Utilisez 'cover' si vous préférez qu'elle remplisse l'espace en coupant si nécessaire. */
+            border-radius: 15px;
+            /* Coins arrondis pour l'image */
+            margin-bottom: 20px;
+            /* Espace sous l'image */
+            display: block;
+            /* Supprime l'espace blanc sous l'image */
+        }
+
+        .design-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .design-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            /* Permet à la description de prendre l'espace disponible */
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 5px 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Styles des boutons de navigation du carrousel */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fond semi-transparent */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 10;
+            /* S'assure que les boutons sont au-dessus */
+            border-radius: 5px;
+            user-select: none;
+            /* Empêche la sélection de texte */
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        /* Section Appel à l'Action (CTA) */
+        .cta-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            /* Ajout d'une marge supérieure */
+        }
+
+        .cta-section h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .cta-section p {
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Media Queries pour la Responsivité */
+        @media (max-width: 992px) {
+            .slide-active {
+                /* Mis à jour de .carousel-group */
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 colonnes sur tablettes */
+                gap: 30px;
+                /* Ajustement du gap pour 2 colonnes */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .slide-active {
+                /* Mis à jour de .carousel-group */
+                grid-template-columns: 1fr;
+                /* 1 colonne sur mobiles */
+                gap: 30px;
+                /* Ajuste le gap pour une seule colonne */
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .defilement {
+                /* Mis à jour de .carousel-container */
+                padding: 0 30px;
+                /* Moins d'espace sur les côtés pour les flèches */
+            }
+
+            .carousel-button {
+                padding: 8px 12px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧦 Chaussettes WebElite</h1>
+            <p>Collection startup tendance - Édition limitée</p>
+        </div>
+
+        <section class="defilement" id="socksCarousel">
+            <div class="carousel-inner">
+                <div class="slide-active">
+                    <div class="slide design-1"> <img src="assets/images/sac.jpg"
+                            alt="Chaussette WebElite Design Classique">
+                        <h3 class="design-title">Classic Logo</h3>
+                        <p class="design-description">Design élégant avec le logo WebElite centré et slogan. Parfait
+                            pour les événements professionnels.</p>
+                        <div class="price-tag">15€</div>
+                        <ul class="features">
+                            <li>Logo haute qualité brodé</li>
+                            <li>Coton premium 80%</li>
+                            <li>Tailles 36-46</li>
+                            <li>Lavable 40°C</li>
+                        </ul>
+                    </div>
+
+                    <div class="slide design-2">
+                        <img src="assets/images/sock2.jpg" alt="Chaussette WebElite Design Motif Répétitif">
+                        <h3 class="design-title">Pattern Premium</h3>
+                        <p class="design-description">Motif géométrique avec mini-logos répétés. Style startup moderne
+                            et accrocheur.</p>
+                        <div class="price-tag">18€</div>
+                        <ul class="features">
+                            <li>Motif exclusif WebElite</li>
+                            <li>Technique jacquard</li>
+                            <li>Anti-bactérien</li>
+                            <li>Édition limitée</li>
+                        </ul>
+                    </div>
+
+                    <div class="slide design-3">
+                        <img src="assets/images/sock3.jpg" alt="Chaussette WebElite Design Bandes Colorées">
+                        <h3 class="design-title">Colorblock Pro</h3>
+                        <p class="design-description">Bandes colorées aux couleurs de la marque avec logo central.
+                            Audacieux et fun !</p>
+                        <div class="price-tag">16€</div>
+                        <ul class="features">
+                            <li>5 couleurs vibrantes</li>
+                            <li>Logo contrasté</li>
+                            <li>Coupe athlétique</li>
+                            <li>Résistant décoloration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slide-active">
+                    <div class="slide design-4">
+                        <img src="assets/images/sock4.jpg" alt="Chaussette WebElite Design Gradient Moderne">
+                        <h3 class="design-title">Gradient Tech</h3>
+                        <p class="design-description">Dégradé animé haute-tech avec logos flottants. Le futur de la
+                            chaussette startup !</p>
+                        <div class="price-tag">20€</div>
+                        <ul class="features">
+                            <li>Effet gradient premium</li>
+                            <li>Logos sublimés</li>
+                            <li>Matière tech innovante</li>
+                            <li>Collection signature</li>
+                        </ul>
+                    </div>
+
+                    <div class="header">
+                        <h1>sacs WebElite</h1>
+                        <p>Collection startup tendance - Édition limitée</p>
+                    </div>
+                    <div class="slide design-1">
+                        <img src="assets/images/sock1.jpg" alt="Chaussette WebElite Design Classique (Répétition)">
+                        <h3 class="design-title">Classic Logo (Répétition)</h3>
+                        <p class="design-description">Design élégant avec le logo WebElite centré et slogan. Parfait
+                            pour les événements professionnels.</p>
+                        <div class="price-tag">15€</div>
+                        <ul class="features">
+                            <li>Logo haute qualité brodé</li>
+                            <li>Coton premium 80%</li>
+                            <li>Tailles 36-46</li>
+                            <li>Lavable 40°C</li>
+                        </ul>
+                    </div>
+                    <div class="slide design-2">
+                        <img src="assets/images/sock2.jpg"
+                            alt="Chaussette WebElite Design Motif Répétitif (Répétition)">
+                        <h3 class="design-title">Pattern Premium (Répétition)</h3>
+                        <p class="design-description">Motif géométrique avec mini-logos répétés. Style startup moderne
+                            et accrocheur.</p>
+                        <div class="price-tag">18€</div>
+                        <ul class="features">
+                            <li>Motif exclusif WebElite</li>
+                            <li>Technique jacquard</li>
+                            <li>Anti-bactérien</li>
+                            <li>Édition limitée</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slide-active">
+                    <div class="slide design-3">
+                        <img src="assets/images/sock3.jpg"
+                            alt="Chaussette WebElite Design Bandes Colorées (Répétition)">
+                        <h3 class="design-title">Colorblock Pro (Répétition)</h3>
+                        <p class="design-description">Bandes colorées aux couleurs de la marque avec logo central.
+                            Audacieux et fun !</p>
+                        <div class="price-tag">16€</div>
+                        <ul class="features">
+                            <li>5 couleurs vibrantes</li>
+                            <li>Logo contrasté</li>
+                            <li>Coupe athlétique</li>
+                            <li>Résistant décoloration</li>
+                        </ul>
+                    </div>
+                    <div class="slide design-4">
+                        <img src="assets/images/sock4.jpg"
+                            alt="Chaussette WebElite Design Gradient Moderne (Répétition)">
+                        <h3 class="design-title">Gradient Tech (Répétition)</h3>
+                        <p class="design-description">Dégradé animé haute-tech avec logos flottants. Le futur de la
+                            chaussette startup !</p>
+                        <div class="price-tag">20€</div>
+                        <ul class="features">
+                            <li>Effet gradient premium</li>
+                            <li>Logos sublimés</li>
+                            <li>Matière tech innovante</li>
+                            <li>Collection signature</li>
+                        </ul>
+                    </div>
+                    <div class="slide design-1">
+                        <img src="assets/images/sock1.jpg" alt="Chaussette WebElite Design Classique (3ème Répétition)">
+                        <h3 class="design-title">Classic Logo (3ème Répétition)</h3>
+                        <p class="design-description">Design élégant avec le logo WebElite centré et slogan. Parfait
+                            pour les événements professionnels.</p>
+                        <div class="price-tag">15€</div>
+                        <ul class="features">
+                            <li>Logo haute qualité brodé</li>
+                            <li>Coton premium 80%</li>
+                            <li>Tailles 36-46</li>
+                            <li>Lavable 40°C</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-button prev" aria-label="Précédent">&#10094;</button>
+            <button class="carousel-button next" aria-label="Suivant">&#10095;</button>
+        </section>
+
+        <div class="cta-section">
+            <h2>Prêt à porter WebElite ? 🚀</h2>
+            <p>Ces chaussettes peuvent servir de goodies exceptionnels pour vos événements ou être vendues comme
+                produits dérivés exclusifs. Minimum de commande : 50 paires par design.</p>
+
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Commander Maintenant</a>
+                <a href="#" class="btn btn-secondary">Demander un Devis</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function setupGroupCarousel(carouselId) {
+                const defilementSection = document.getElementById(carouselId); // Renommé
+                if (!defilementSection) return;
+
+                const carouselInner = defilementSection.querySelector('.carousel-inner');
+                let slideActiveGroups = Array.from(carouselInner.querySelectorAll('.slide-active')); // Renommé
+                const prevButton = defilementSection.querySelector('.carousel-button.prev');
+                const nextButton = defilementSection.querySelector('.carousel-button.next');
+
+                let currentIndex = 0;
+                let groupWidth = slideActiveGroups[0].offsetWidth; // Largeur d'un groupe slide-active
+
+                // Clonage des éléments pour l'effet infini
+                const numClones = 1;
+
+                for (let i = 0; i < numClones; i++) {
+                    carouselInner.appendChild(slideActiveGroups[i].cloneNode(true));
+                    carouselInner.insertBefore(slideActiveGroups[slideActiveGroups.length - 1 - i].cloneNode(true), slideActiveGroups[0]);
+                }
+
+                // Mettre à jour les références après le clonage
+                slideActiveGroups = Array.from(carouselInner.querySelectorAll('.slide-active'));
+                currentIndex = numClones; // Commencer à l'index du premier VRAI groupe
+
+                // Positionner le carrousel au début des vrais éléments (après les clones du début)
+                carouselInner.style.transform = `translateX(-${currentIndex * groupWidth}px)`;
+                carouselInner.style.transition = 'none';
+
+                // Mettre à jour la largeur du groupe en cas de redimensionnement
+                function updateGroupWidth() {
+                    if (slideActiveGroups.length > 0) {
+                        groupWidth = slideActiveGroups[0].offsetWidth;
+                        carouselInner.style.transition = 'none';
+                        carouselInner.style.transform = `translateX(-${currentIndex * groupWidth}px)`;
+                    }
+                }
+
+                function slideTo(index) {
+                    carouselInner.style.transition = 'transform 0.5s ease-in-out';
+                    carouselInner.style.transform = `translateX(-${index * groupWidth}px)`;
+                }
+
+                function slideNext() {
+                    currentIndex++;
+                    slideTo(currentIndex);
+
+                    if (currentIndex >= slideActiveGroups.length - numClones) {
+                        setTimeout(() => {
+                            carouselInner.style.transition = 'none';
+                            currentIndex = numClones;
+                            carouselInner.style.transform = `translateX(-${currentIndex * groupWidth}px)`;
+                        }, 500);
+                    }
+                }
+
+                function slidePrev() {
+                    currentIndex--;
+                    slideTo(currentIndex);
+
+                    if (currentIndex < numClones) {
+                        setTimeout(() => {
+                            carouselInner.style.transition = 'none';
+                            currentIndex = slideActiveGroups.length - (numClones + 1);
+                            carouselInner.style.transform = `translateX(-${currentIndex * groupWidth}px)`;
+                        }, 500);
+                    }
+                }
+
+                prevButton.addEventListener('click', slidePrev);
+                nextButton.addEventListener('click', slideNext);
+
+                updateGroupWidth(); // Initialiser la largeur au chargement
+                window.addEventListener('resize', updateGroupWidth);
+            }
+
+            setupGroupCarousel('socksCarousel');
+        });
+    </script>
+</body>
+
+</html>
