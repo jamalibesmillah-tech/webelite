@@ -25,6 +25,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           lfs: true
+      - name: Materialize Git LFS assets
+        run: |
+          git lfs pull
+          git lfs checkout
+          if git lfs ls-files | grep -q ' - '; then
+            echo "Git LFS files are still pointers." >&2
+            exit 1
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
